@@ -1,0 +1,23 @@
+{
+  "name": "hackathonGravityServer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "websocket": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a0000778/hackathonGravityServer.git"
+  },
+  "author": "a0000778 <a0000778@gmail.com> (http://code.a0000778.idv.biz/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a0000778/hackathonGravityServer/issues"
+  },
+  "homepage": "https://github.com/a0000778/hackathonGravityServer"
+}
