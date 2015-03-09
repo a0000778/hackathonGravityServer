@@ -24,7 +24,12 @@ function Game(code,viewSocket){
 		.on('message',function(data){
 			data=parseJSON(data);
 			if(data===null) viewSocket.close(4002,'format error');
-			_.sendControl(data);
+			var player=data.player;
+			if(player){
+				data.player=undefined;
+				_.sendOneControl(player,data)
+			}else
+				_.sendControl(data);
 		})
 		.on('close',function(){
 			_.end(4100,'lose viewer socket');
@@ -53,6 +58,10 @@ Game.prototype.join=function(socket){
 			});
 		})
 	;
+}
+Game.prototype.sendOneControl=function(player,data){
+	var control=this.controls.get(player);
+	if(control) control.sendUTF(JSON.stringify(data));
 }
 Game.prototype.sendControl=function(data){
 	data=JSON.stringify(data);
